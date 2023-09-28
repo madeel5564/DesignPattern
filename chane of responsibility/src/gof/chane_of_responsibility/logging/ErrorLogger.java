@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chane.of.responsibility;
+package gof.chane_of_responsibility.logging;
 
 /**
  *
  * @author fa20-bse-163
  */
-public class ConsoleLogger extends AbstractLogger {
+public class ErrorLogger extends AbstractLogger {
 
-   public ConsoleLogger(int level){
+   public ErrorLogger(int level){
       this.level = level;
    }
 
    @Override
    protected void write(String message) {		
-      System.out.println("Standard Console::Logger: " + message);
+      System.out.println("Error Console::Logger: " + message);
    }
 }
