@@ -24,4 +24,31 @@ public class MealBuilder {
       meal.addItem(new Pepsi());
       return meal;
    }
+   public Meal prepareMealWithBeverage(String beverageType, String teaPreference) {
+        Meal meal = new Meal();
+
+        // Prepare the main course.
+        if (beverageType.equalsIgnoreCase("Y")) {
+            if (teaPreference.equalsIgnoreCase("Y")) {
+                Tea tea = new Tea() {
+                    @Override
+                    public float getPrice() {
+                        return 1.75f;
+                    }
+                };
+                meal.addItem(new DietBeverageDecorator(tea));
+            } else {
+                meal.addItem(new DietCoke());
+            }
+        } else {
+            if (teaPreference.equalsIgnoreCase("Y")) {
+                meal.addItem(new Tea() {});
+            } else {
+                meal.addItem(new Coke());
+            }
+        }
+
+        // Return the prepared meal.
+        return meal;
+    }
 }

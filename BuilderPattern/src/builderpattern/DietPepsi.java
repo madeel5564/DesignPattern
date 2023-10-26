@@ -9,15 +9,9 @@ package builderpattern;
  *
  * @author fa20-bse-163
  */
-public class VegBurger extends Burger {
-
-   @Override
-   public float price() {
-      return 25.0f;
-   }
-
-   @Override
-   public String name() {
-      return "Veg Burger";
-   }
+public class DietPepsi extends Bevrage {
+    public DietPepsi(Beverage beverage) {
+        super(beverage);
+        beverage.setprice(beverage.getPrice() - 0.5f);
+    }
 }
